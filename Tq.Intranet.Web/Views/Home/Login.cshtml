@@ -1,0 +1,37 @@
+﻿@model Tq.Intranet.Web.Models.User
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<div class="main">
+    <div class="register">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="card custom-card">
+                <div class=" card-header bg-primary text-white">
+
+
+                </div>
+            </div>
+            @model WebApp.Models.User
+    <div class="card-body">
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName)
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.UserName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password)
+            @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+        <div class="form-group">
+            <button type="submit">Login</button>
+        </div>
+    </div>
+</div>
+</div>
+
